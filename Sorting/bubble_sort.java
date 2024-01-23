@@ -74,3 +74,41 @@ public class bubble_sort {
 	}
 
 }
+
+
+// ------->------->------->------->------->Kunal Kushwaha's Reference ------->------->------->--------->------->------->------->
+
+
+import java.util.*;
+class HelloWorld {
+    
+      public static void main(String[] args) {
+        
+        int[] arr = {23,1,67,34,90,3};
+        bubble(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    
+  static void bubble(int[] arr){
+      
+      for(int i=0; i<arr.length; i++){
+          for(int j=1; j<arr.length-i; j++){
+              
+              if(arr[j]<arr[j-1]){
+                  int temp=arr[j];
+                  arr[j]=arr[j-1];
+                  arr[j-1]=temp;
+              }
+              
+          }
+      }
+  }
+    
+  
+    
+}
+
+// Space Comlexity: O(1)
+// Time Complexity:
+//   Worst Case: O(n2)
+//   Best Case: O(n)

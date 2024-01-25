@@ -30,7 +30,7 @@ public class selection_sort {
 
 }
 
--------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->
+//-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->-------->
 
 
 package Sorting;
@@ -63,5 +63,65 @@ public class selection_sort {
 		}
 		
 	}
+
+
+
+
+
+
+//-------->-------->-------->-------->-------->------Kunal Kushwaha Reference-------->-------->-------->-------->-------->-------->
+
+
+
+	import java.util.Arrays;
+
+class demo {
+
+    static void selection(int[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+
+            
+
+            int last = arr.length - i - 1;
+
+            int max = find_max(arr, 0, last);
+
+            swap(arr, max, last);
+
+        }
+
+    }
+
+    static int find_max(int[] arr, int start, int last) {
+
+        int max = start;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[max]) {
+                max = i;
+            }
+            
+        }
+        return max;
+    }
+
+
+    static void swap(int[] arr,int max,int last){
+         int temp = arr[max];
+         arr[max]=arr[last];
+         arr[max]=temp;
+    }
+
+    
+
+    public static void main(String[] args) {
+
+        int[] arr = { 7, 3, 99, 53, 17 };
+        selection(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+}
 
 }

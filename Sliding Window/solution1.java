@@ -1,7 +1,7 @@
 // Problem Description : https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
 
 {/* Approach:
-
+ 
 1. Initialization: Start with i = 0 and j = 0. i marks the start of the window, and j marks the end. windowSum keeps the current sum of elements within the window, and maxSum stores the maximum sum found.
 
 

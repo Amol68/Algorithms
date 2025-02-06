@@ -25,25 +25,23 @@ Approach:
 
 */}
 
-import java.util.*;
+class Solution {
 
-class Main {
-
-    public static int search(String pat, String txt) {
+    int search(String pat, String txt) {
     
-     Map<Character,Integer> map = new HashMap<>();
+     Map<Character,Integer> hmap = new HashMap<>();
      
      for(int i=0; i<pat.length(); i++){
          
-         char c = pat.charAt(i);
+         char c = txt.charAt(i);
          
-         if(map.containsKey(c)){
+         if(hmap.containsKey(c)){
              
-             int count = map.get(c);
-             map.put(c,count++);
+             int count = hmap.get(c);
+             hmap.put(c,count++);
              
          }else{
-             map.put(c,1);
+             hmap.put(c,1);
          }
      }
        
@@ -51,16 +49,18 @@ class Main {
        int result=0;
        int n = txt.length();
        int k = pat.length();
-       int count = map.size();
+       int count = hmap.size();
        
        while(j<n){
            
            char c = txt.charAt(j);
            
-           if(map.containsKey(c)){
+           if(hmap.containsKey(c)){
                
-               int char_count = map.get(c);
-               map.put(c,char_count--);
+               int char_count = hmap.get(c);
+               char_count--;
+               
+               hmap.put(c,char_count);
                
                if(char_count==0) count--;
            }
@@ -71,25 +71,22 @@ class Main {
                
                if(count==0) result++;
                
-               if(map.containsKey(txt.charAt(i))){
+               if(hmap.containsKey(txt.charAt(i))){
                    
-                   int char_count = map.get(txt.charAt(i));
-                   map.put(txt.charAt(i),char_count++);
+                   int char_count = hmap.get(txt.charAt(i));
+                   char_count++;
+                   hmap.put(txt.charAt(i),char_count);
                    
-                   if(char_count==1){
-                       count++;
-                   }  
+                   if(count==1) count++;
                }
-               i++;
-               j++;
+               
+               i++; j++;
+               
+               
            }
+           
        }
-        return result;
-    }
-   
-    public static void main(String[] args) {
-      int result = search("for","forxxorfxdofr");
-      System.out.println(result);
+       
+      return result;
     }
 }
-

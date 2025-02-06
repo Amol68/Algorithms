@@ -50,6 +50,8 @@ public static List<Integer> FirstNegativeInteger(int arr[], int k) {
              
              else{
                  list.add(resultQueue.peek());
+               
+               if(resultQueue.peek()==arr[i]) 
                  resultQueue.poll();
              }
              i++;

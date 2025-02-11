@@ -7,7 +7,7 @@ import java.util.*;
 class Main {
     
     public static int getCount(String str,int k){
-        
+         
          Map<Character, Integer> hmap = new HashMap<>();
          int i=0; int j=0;
          int result=0;
